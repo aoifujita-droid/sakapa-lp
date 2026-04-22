@@ -70,6 +70,13 @@
     .hero p {
       font-size: 15px; max-width: 640px; margin: 0 auto; opacity: .95;
     }
+    .hero .hero-sub {
+      font-size: clamp(16px, 2.6vw, 22px);
+      font-weight: 700;
+      letter-spacing: .04em;
+      margin-bottom: 18px;
+      opacity: 1;
+    }
     .cta-row {
       display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
       max-width: 620px; margin: 28px auto 0;
@@ -177,7 +184,7 @@
 
     .plan-cards {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
       align-items: start;
     }
@@ -387,14 +394,14 @@
       letter-spacing: 0.04em;
     }
     .problem-card-d h3 {
-      font-size: 15px;
+      font-size: clamp(16px, 2.2vw, 18px);
       font-weight: 700;
       color: var(--green-dark);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       line-height: 1.5;
     }
     .problem-card-d p {
-      font-size: 14px;
+      font-size: clamp(14px, 1.9vw, 15px);
       color: var(--muted);
       line-height: 1.9;
       margin: 0;
@@ -697,13 +704,23 @@
       }
     }
     @media (max-width: 680px) {
+      .header-inner { padding: 10px 0; gap: 10px; }
+      .brand { gap: 8px; }
+      .brand img { height: 30px !important; }
+      .brand-text .name { font-size: 13px; line-height: 1.25; }
+      .brand-text .sub { font-size: 10px; }
+      .header-nav { gap: 10px; }
       .header-nav a:not(.mini-cta) { display: none; }
+      .header-nav .mini-cta { padding: 8px 12px; font-size: 12px; }
       .cta-row { grid-template-columns: 1fr; }
       .plan-cards { grid-template-columns: 1fr; }
       .reason-grid-a { grid-template-columns: 1fr; }
       .faq-grid { grid-template-columns: 1fr; }
       .flow-title h2, .pricing-title h2, .split-title h2, .faq-title h2 { font-size: 24px; }
       .goal-banner, .bottom-cta { padding: 22px 18px; }
+    }
+    @media (max-width: 420px) {
+      .brand-text .sub { display: none; }
     }
 
     /* === Timeline (当日の流れ) === */
@@ -764,6 +781,36 @@
       margin-bottom: 8px;
     }
     .flow-note { font-size: 14px; color: var(--muted); line-height: 1.8; text-align: center; }
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 24px 0 14px;
+    }
+    .day-header:first-child { margin-top: 0; }
+    .day-badge {
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: .1em;
+      padding: 6px 16px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .day-header h3 {
+      font-size: clamp(16px, 2.2vw, 20px);
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1.4;
+    }
+    .day-header::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: var(--green-soft);
+      border-radius: 2px;
+    }
     @media (max-width: 900px) {
       .timeline-step { grid-template-columns: 140px 1fr; }
       .timeline-image { display: none; }
@@ -817,7 +864,8 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-inner">
-        <h1>AIエージェント<br>家庭教師</h1>
+        <h1>AIエージェント家庭教師</h1>
+        <p class="hero-sub">Claude Code導入サポート</p>
         <p>AIエージェントを、知識で終わらせない。<br>実務で動く形にするための、完全オーダーメイド伴走サービス。</p>
         <div class="cta-row">
           <a href="#contact" class="cta-btn">まずは相談する</a>
@@ -876,9 +924,9 @@
 
           <article class="point-card">
             <img src="data:image/png;base64,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" class="icon" alt="" style="object-fit:contain;">
-            <h3 class="headline">作りたいものを<br>持ち込み</h3>
-            <p class="lead">アイデアをそのまま持ち込んでOK</p>
-            <p>「こんなものが作りたい」というイメージがあれば十分。具体化できていない段階から一緒に整理します。</p>
+            <h3 class="headline">スキルが作れる<br>伴走</h3>
+            <p class="lead">自分の業務に合うスキルを自作</p>
+            <p>既存の機能に合わせるのではなく、自分の業務に合わせたスキル（独自の型・手順）を作ることをゴールに伴走します。</p>
           </article>
 
           <article class="point-card">
@@ -892,7 +940,7 @@
             <img src="data:image/png;base64,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" class="icon" alt="" style="object-fit:contain;">
             <h3 class="headline">好きな時間に</h3>
             <p class="lead">忙しい経営者の予定に合わせて</p>
-            <p>平日9:00〜21:00で対応。短時間（1〜1.5時間）で要点を絞り、移動時間ゼロのオンラインで実施。</p>
+            <p>完全予約制でご希望の日時に合わせて調整。短時間（1〜1.5時間）で要点を絞り、移動時間ゼロのオンラインで実施。</p>
           </article>
         </div>
 
@@ -907,15 +955,20 @@
       <div class="container">
         <div style="margin-top:48px; margin-bottom:8px; text-align:center;">
           <div style="display:inline-block; background:var(--green-soft); border:2px solid var(--green); border-radius:var(--radius-lg); padding:28px 40px; max-width:760px; width:100%;">
-            <p style="font-size:12px; font-weight:700; letter-spacing:.1em; color:var(--green); margin-bottom:10px;">GOAL</p>
-            <h2 style="font-size:clamp(20px,3vw,28px); color:var(--green-dark); font-weight:800; line-height:1.5; margin-bottom:10px;">AIエージェントを自走して<br>使いこなせるようになる。</h2>
-            <p style="font-size:14px; color:var(--muted); line-height:1.9;">知識を増やすだけではなく、実務で動く形に落とし込むところまで伴走します。</p>
+            <p style="font-size:13px; font-weight:700; letter-spacing:.12em; color:var(--green); margin-bottom:14px;">GOAL</p>
+            <h2 style="font-size:clamp(24px,4vw,38px); color:var(--green-dark); font-weight:800; line-height:1.5; margin-bottom:14px;">AIエージェントを<br>スキルを自作して<br>使いこなせるようになる。</h2>
+            <p style="font-size:15px; color:var(--muted); line-height:1.9;">知識を増やすだけではなく、自分の業務に合うスキル（独自の型・手順）を自分で作り、実務で動く形に落とし込むところまで伴走します。</p>
           </div>
         </div>
 
         <div class="section-head" id="flow" style="margin-top:48px;">
           <div class="section-label">FLOW</div>
-          <h2 class="section-title">AIエージェント家庭教師の当日の流れ</h2>
+          <h2 class="section-title">2日間の流れ（スタンダードプラン）</h2>
+        </div>
+
+        <div class="day-header">
+          <span class="day-badge">DAY 1</span>
+          <h3>環境を整えて、最初のスキルを作ってみる</h3>
         </div>
 
         <div class="timeline">
@@ -946,6 +999,36 @@
           <div class="timeline-step">
             <div class="timeline-arrow">
               <div class="step-num">STEP 02</div>
+              <div class="step-title">サンプルスキルを<br>作ってみる</div>
+            </div>
+            <div class="timeline-content">
+              <h4>はじめの一歩を一緒に体験</h4>
+              <p>「スキル」がどんなものか、実際に小さなサンプルを一緒に作って動かします。全体のイメージがつかめる状態にして、Day2へ。</p>
+            </div>
+            <div class="timeline-image">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" y="30" width="140" height="90" rx="6" fill="#14398D"></rect>
+                <rect x="34" y="34" width="132" height="82" fill="#fff"></rect>
+                <text x="40" y="50" font-family="Courier" font-size="9" fill="#008A83">$ claude code</text>
+                <text x="40" y="65" font-family="Courier" font-size="8" fill="#595757">▸ creating skill...</text>
+                <text x="40" y="78" font-family="Courier" font-size="8" fill="#595757">▸ analyzing input</text>
+                <text x="40" y="91" font-family="Courier" font-size="8" fill="#008A83">▸ ✓ done!</text>
+                <line x1="40" y1="100" x2="80" y2="100" stroke="#008A83" stroke-width="2"></line>
+                <rect x="60" y="125" width="80" height="14" rx="2" fill="#E5EAEA"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-header">
+          <span class="day-badge">DAY 2</span>
+          <h3>自分の業務に合うスキルを設計して、実際に作る</h3>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="timeline-arrow">
+              <div class="step-num">STEP 03</div>
               <div class="step-title">作りたいものを<br>整理する</div>
             </div>
             <div class="timeline-content">
@@ -968,7 +1051,7 @@
 
           <div class="timeline-step">
             <div class="timeline-arrow">
-              <div class="step-num">STEP 03</div>
+              <div class="step-num">STEP 04</div>
               <div class="step-title">進め方を<br>一緒に考える</div>
             </div>
             <div class="timeline-content">
@@ -992,35 +1075,12 @@
 
           <div class="timeline-step">
             <div class="timeline-arrow">
-              <div class="step-num">STEP 04</div>
+              <div class="step-num">STEP 05</div>
               <div class="step-title">実際に<br>一緒に作る</div>
             </div>
             <div class="timeline-content">
               <h4>その場で手を動かしながら</h4>
-              <p>聞いて終わりではなく、必要に応じて画面共有しながら実際に試します。詰まったところはすぐに切り分け。</p>
-            </div>
-            <div class="timeline-image">
-              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
-                <rect x="30" y="30" width="140" height="90" rx="6" fill="#14398D"></rect>
-                <rect x="34" y="34" width="132" height="82" fill="#fff"></rect>
-                <text x="40" y="50" font-family="Courier" font-size="9" fill="#008A83">$ claude code</text>
-                <text x="40" y="65" font-family="Courier" font-size="8" fill="#595757">▸ creating skill...</text>
-                <text x="40" y="78" font-family="Courier" font-size="8" fill="#595757">▸ analyzing input</text>
-                <text x="40" y="91" font-family="Courier" font-size="8" fill="#008A83">▸ ✓ done!</text>
-                <line x1="40" y1="100" x2="80" y2="100" stroke="#008A83" stroke-width="2"></line>
-                <rect x="60" y="125" width="80" height="14" rx="2" fill="#E5EAEA"></rect>
-              </svg>
-            </div>
-          </div>
-
-          <div class="timeline-step">
-            <div class="timeline-arrow">
-              <div class="step-num">STEP 05</div>
-              <div class="step-title">次回までの<br>宿題を決める</div>
-            </div>
-            <div class="timeline-content">
-              <h4>次に何をすればいいかが分かる状態で終わる</h4>
-              <p>「あとは何すればいいんだっけ？」をなくします。具体的な次の一歩を持ち帰り、自走できる状態へ。</p>
+              <p>聞いて終わりではなく、必要に応じて画面共有しながら実際に試します。詰まったところはすぐに切り分け、実務で使える形に仕上げます。</p>
             </div>
             <div class="timeline-image">
               <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
@@ -1060,16 +1120,6 @@
               <div class="plan-meta-row"><span class="plan-meta-pill">1回</span></div>
               <div class="plan-meta-row">1.5時間</div>
               <div class="plan-meta-row">1名</div>
-            </div>
-          </div>
-
-          <div class="plan-card-item">
-            <div class="plan-card-name">ライト+</div>
-            <div class="plan-card-price">20<span>万円</span></div>
-            <div class="plan-card-meta">
-              <div class="plan-meta-row"><span class="plan-meta-pill">1回</span></div>
-              <div class="plan-meta-row">1.5時間</div>
-              <div class="plan-meta-row">3名</div>
             </div>
           </div>
 
