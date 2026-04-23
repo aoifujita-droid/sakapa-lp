@@ -712,7 +712,7 @@
       .brand { gap: 8px; }
       .brand-text { display: none; }
       .logo-desktop { display: none; }
-      .logo-mobile { display: block; height: 40px !important; width: auto !important; max-width: none; }
+      .logo-mobile { display: block; height: 44px !important; width: auto !important; max-width: none; flex-shrink: 0; }
       .cta-row { grid-template-columns: 1fr; }
       .goal-block { padding: 22px 20px !important; border-radius: 16px !important; }
       .plan-cards { grid-template-columns: 1fr; gap: 10px; }
@@ -790,7 +790,7 @@
       }
     }
     @media (max-width: 420px) {
-      .logo-mobile { height: 36px !important; }
+      .logo-mobile { height: 40px !important; flex-shrink: 0; }
     }
 
     /* === Timeline (当日の流れ) === */
