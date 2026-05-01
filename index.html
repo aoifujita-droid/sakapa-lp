@@ -37,28 +37,28 @@
     .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
     .site-header {
       position: sticky; top: 0; z-index: 20;
-      background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .header-inner {
       display: flex; align-items: center; justify-content: space-between;
       padding: 14px 0; gap: 20px;
     }
     .brand { display: flex; align-items: center; gap: 12px; }
-    .brand img { filter: brightness(0) invert(1); }
+    .brand img { filter: none; }
     .brand-mark {
       width: 42px; height: 42px; border-radius: 8px;
-      background: #fff; color: var(--green-deep);
+      background: var(--green); color: #fff;
       display: flex; align-items: center; justify-content: center;
       font-weight: 900; letter-spacing: .04em;
     }
-    .brand-text .name { font-size: 16px; font-weight: 700; color: #fff; }
-    .brand-text .sub { font-size: 11px; color: rgba(255,255,255,.75); }
+    .brand-text .name { font-size: 16px; font-weight: 700; color: var(--text); }
+    .brand-text .sub { font-size: 11px; color: var(--muted); }
     .header-nav { display: flex; gap: 20px; align-items: center; }
-    .header-nav a { font-size: 13px; font-weight: 500; color: #fff; }
+    .header-nav a { font-size: 13px; font-weight: 500; color: var(--text); }
     .header-nav .mini-cta {
-      background: #fff; color: var(--green-deep); padding: 10px 16px; border-radius: 999px; font-weight: 700;
+      background: var(--green); color: #fff; padding: 10px 16px; border-radius: 999px; font-weight: 700;
     }
 
     .hero {
@@ -749,7 +749,7 @@
         display: block;
         width: 100%;
         height: 2.5px;
-        background: #fff;
+        background: var(--text);
         border-radius: 2px;
         transition: transform 0.3s ease, opacity 0.2s ease;
       }
@@ -969,22 +969,18 @@
         </div>
         <div class="problem-grid-d">
           <article class="problem-card-d">
-            <div class="problem-tag">お悩み</div>
             <h3>Claude Codeを使ってみたいが、最初の一歩が重い</h3>
             <p>何から始めればいいのか分からず、触る前に止まってしまう。</p>
           </article>
           <article class="problem-card-d">
-            <div class="problem-tag">お悩み</div>
             <h3>AIに興味はあるが、実務にどう活かすか見えていない</h3>
             <p>情報収集だけ増えて、現場で使える形にならない。</p>
           </article>
           <article class="problem-card-d">
-            <div class="problem-tag">お悩み</div>
             <h3>触ってはみたが、途中で手が止まる</h3>
             <p>詰まった時に相談できる相手がおらず、進まない。</p>
           </article>
           <article class="problem-card-d">
-            <div class="problem-tag">お悩み</div>
             <h3>セキュリティ面が心配で踏み込めない</h3>
             <p>会社の情報を扱って大丈夫か不安で、導入に踏み切れない。</p>
           </article>
