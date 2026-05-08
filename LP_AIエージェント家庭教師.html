@@ -496,6 +496,19 @@
     }
 
     .section-alt { background: var(--bg-soft); }
+    /* CASEセクション: container内にネストされているため、calc trickで全幅背景に */
+    section#voices,
+    .section-alt#voices {
+      background: var(--bg-soft);
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 56px 0;
+    }
+    section#voices > .container {
+      margin-left: auto;
+      margin-right: auto;
+    }
     .section-head {
       max-width: 760px;
       margin-bottom: 34px;
