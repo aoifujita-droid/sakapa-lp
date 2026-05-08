@@ -762,14 +762,16 @@
       }
       .flow-wrapper .flow-section-head { margin-top: 24px !important; }
 
-      /* SP専用：STEP box に下線＋間隔（FB⑦） */
+      /* SP専用：STEPを独立カードに（FB⑦再対応） */
       .timeline-step {
-        border-bottom: 1px solid var(--line);
-        padding-bottom: 20px;
-        margin-bottom: 28px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        margin-bottom: 24px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        overflow: hidden;
       }
       .timeline:last-of-type .timeline-step:last-child {
-        border-bottom: none;
         margin-bottom: 0;
       }
 
@@ -876,10 +878,12 @@
       grid-template-columns: 180px 1fr 160px;
       align-items: stretch;
       border: 1px solid var(--line);
-      border-bottom: none;
+      border-radius: 8px;
       background: #fff;
+      margin-bottom: 16px;
+      overflow: hidden;
     }
-    .timeline-step:last-child { border-bottom: 1px solid var(--line); }
+    .timeline-step:last-child { margin-bottom: 0; }
     .timeline-arrow {
       background: var(--green);
       color: #fff;
@@ -888,7 +892,7 @@
       flex-direction: column;
       justify-content: center;
       gap: 8px;
-      border-radius: 8px;
+      border-radius: 8px 0 0 8px;
     }
     .step-num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; opacity: 0.85; }
     .step-title { font-size: 16px; font-weight: 800; line-height: 1.4; }
@@ -959,7 +963,7 @@
     }
     @media (max-width: 680px) {
       .timeline-step { grid-template-columns: 1fr; }
-      .timeline-arrow { clip-path: none; padding: 16px 20px; flex-direction: row; gap: 12px; align-items: center; }
+      .timeline-arrow { clip-path: none; padding: 16px 20px; flex-direction: row; gap: 12px; align-items: center; border-radius: 12px 12px 0 0; }
     }
 
     /* Hero内CTAボタン */
