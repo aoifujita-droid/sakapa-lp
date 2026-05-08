@@ -253,11 +253,13 @@
       font-weight: 700;
       color: var(--green-deep);
     }
-    .plan-card-price .tax-suffix {
+    .plan-card-tax-note {
+      display: block;
       font-size: 13px;
-      font-weight: 600;
       color: var(--muted);
-      margin-left: 4px;
+      font-weight: 500;
+      margin-top: 4px;
+      line-height: 1.4;
     }
     .plan-card-meta {
       display: flex;
@@ -792,6 +794,7 @@
       .plan-card-item { padding: 16px 16px 14px; }
       .plan-card-name { font-size: 17px; padding-bottom: 10px; }
       .plan-card-price { font-size: 32px; }
+      .plan-card-tax-note { font-size: 12px; }
       .reason-grid-a { grid-template-columns: 1fr; }
       .faq-grid { grid-template-columns: 1fr; }
       .flow-title h2, .pricing-title h2, .split-title h2, .faq-title h2 { font-size: 24px; }
@@ -1306,7 +1309,8 @@
         <div class="plan-cards">
           <div class="plan-card-item">
             <div class="plan-card-name">ライト</div>
-            <div class="plan-card-price">11<span>万円</span><span class="tax-suffix">（税込）</span></div>
+            <div class="plan-card-price">11<span>万円</span></div>
+            <div class="plan-card-tax-note">（税込）</div>
             <div class="plan-card-meta">
               <div class="plan-meta-row"><span class="plan-meta-pill">1回</span></div>
               <div class="plan-meta-row">1.5時間</div>
@@ -1317,7 +1321,8 @@
           <div class="plan-card-item featured">
             <div class="plan-featured-badge">おすすめ</div>
             <div class="plan-card-name">スタンダード</div>
-            <div class="plan-card-price">33<span>万円</span><span class="tax-suffix">（税込）</span></div>
+            <div class="plan-card-price">33<span>万円</span></div>
+            <div class="plan-card-tax-note">（税込）</div>
             <div class="plan-card-meta">
               <div class="plan-meta-row"><span class="plan-meta-pill">3回</span></div>
               <div class="plan-meta-row">1.5時間 / 1時間 / 1時間</div>
@@ -1327,7 +1332,8 @@
 
           <div class="plan-card-item">
             <div class="plan-card-name">グループ</div>
-            <div class="plan-card-price">110<span>万円</span><span class="tax-suffix">（税込）</span></div>
+            <div class="plan-card-price">110<span>万円</span></div>
+            <div class="plan-card-tax-note">（税込）</div>
             <div class="plan-card-meta">
               <div class="plan-meta-row"><span class="plan-meta-pill">3回</span></div>
               <div class="plan-meta-row">1.5時間 / 1時間 / 1時間</div>
@@ -1337,7 +1343,8 @@
 
           <div class="plan-card-item">
             <div class="plan-card-name">チーム</div>
-            <div class="plan-card-price">応相談<span class="tax-suffix">（税込価格でご提案）</span></div>
+            <div class="plan-card-price">応相談</div>
+            <div class="plan-card-tax-note">（税込価格でご提案）</div>
             <div class="plan-card-meta">
               <div class="plan-meta-row"><span class="plan-meta-pill">3回</span></div>
               <div class="plan-meta-row">1.5時間 / 1時間 / 1時間</div>
